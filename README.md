@@ -41,6 +41,17 @@ in `vendor/assets/bower_components`.
 `vendor/assets/bower_components` path is already references
 for the JS and CSS pipeline.
 
+### JS Helpers
+
+If you check `src/template_path.js.erb`, you'll get that I create
+a javascript function `getTplPath`.
+
+  getTplPath('demo/index')
+  -> "/tpls/demo/index" // from the web
+  -> "/src/demo/index" // inside our project
+
+It's a small helper to help referencing template path.
+
 ## About changes from a base rails app
 
 ### Removed frameworks
