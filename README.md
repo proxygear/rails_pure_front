@@ -19,7 +19,7 @@ Because for front end you want to have the following structure :
 * contact/form.sass
 
 Your `coffee` and `sass` use normally the asset pipeline.
-You can use typical helpers in your haml files such as :
+You can use typical helpers in your HAML files such as :
 * `render`
 * `yield`
 * `*_tag`
@@ -43,9 +43,17 @@ for the JS and CSS pipeline.
 
 ## About changes from a base rails app
 
-### Remove frameworks
+### Removed frameworks
 
 * active_record
+
+### Removed gems
+
+* sqlite3
+* jquery-rails
+* turbolinks
+* jbuilder
+* sdoc
 
 ### Removed folders
 
@@ -54,4 +62,8 @@ for the JS and CSS pipeline.
 
 ### Added
 
+Things you may look about
+
+* haml-rails gem
+* bower-rails gem
 * app/controllers/views_controller.rb
