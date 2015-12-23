@@ -16,6 +16,14 @@ Bundler.require(*Rails.groups)
 module Base
   NAME = 'Rails Front end'
   VERSION = '0.0.1'
+  TPL_FOLDER = "tpls"
+  SRC_FOLDER = "src"
+  BASE_FILE = 'application'
+
+  def self.tplPath
+    "/#{TPL_FOLDER}"
+  end
+
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -28,5 +36,10 @@ module Base
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    config.assets.paths << File.join([Rails.root, ::Base::SRC_FOLDER])
+
+    Rails.application.config.assets.precompile += [/.*\.js/,/.*\.coffee/,/.*\.css/,/.*\.sass/,/.*\.scss/]
+    Rails.application.config.assets.precompile += %w(*.svg *.eot *.woff *.ttf *.gif *.png *.ico)
   end
 end
