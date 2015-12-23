@@ -59,6 +59,7 @@ for the JS and CSS pipeline.
 
 * app/mailers
 * app/models
+* app/assets
 
 ### Added
 
