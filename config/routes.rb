@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   get '/' => 'views#index'
-  get '/templates/*path' => 'views#show'
+  get "/#{::Base::TPL_FOLDER}/*path" => 'views#show'
 end

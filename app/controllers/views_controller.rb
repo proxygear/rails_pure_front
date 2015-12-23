@@ -1,9 +1,9 @@
 class ViewsController < ApplicationController
-  prepend_view_path 'src'
+  prepend_view_path ::Base::SRC_FOLDER
   layout false
 
   def index
-    render_case "application"
+    render_case ::Base::BASE_FILE
   end
 
   def show
@@ -13,7 +13,6 @@ class ViewsController < ApplicationController
   protected
 
   def render_case path
-    Rails.logger.info "render haml path : #{path}"
     render template: path, formats: [:html]
   end
 end
