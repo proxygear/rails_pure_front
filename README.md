@@ -1,3 +1,6 @@
 # Rails Front End
 
- #FIXME
+## Remove elements
+
+* app/mailers
+* app/models
